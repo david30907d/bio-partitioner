@@ -1,4 +1,4 @@
-# Bio Partitioner ![.github/workflows/dockerimage.yml](https://github.com/david30907d/bio-partitioner/workflows/.github/workflows/dockerimage.yml/badge.svg)
+# Bio Partitioner ![Docker Image CI](https://github.com/david30907d/bio-partitioner/workflows/Docker%20Image%20CI/badge.svg)
 
 ## Install
 
