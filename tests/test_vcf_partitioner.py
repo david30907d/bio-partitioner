@@ -4,10 +4,10 @@ from bio_partitioner.factory import PartitionerFactory
 
 
 def test_crawl_every_page():
-    partitioner = PartitionerFactory.create_partitioner("vcf")
+    partitioner_caller = PartitionerFactory.create_partitioner("vcf")
     dataset = "fixtures/scaffold.vcf"
-    num_of_rows = partitioner.count_num_of_rows(dataset)
-    partitioner.partition(dataset, num_of_rows, 8)
+    vcf_partioner = partitioner_caller(dataset=dataset, partition_num=8)
+    vcf_partioner.partition()
     if __debug__:
         for idx in range(8):
             if not Path(f"{idx}.vcf").exists():

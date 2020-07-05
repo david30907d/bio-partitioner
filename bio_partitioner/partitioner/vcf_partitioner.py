@@ -1,9 +1,7 @@
-# type: ignore
 """
 vcf partitioner
 """
 import math
-from abc import abstractclassmethod
 
 import vcf
 
@@ -11,19 +9,16 @@ from bio_partitioner.base import PartitionerBase
 
 
 class VCFPartitioner(PartitionerBase):
-    @abstractclassmethod
-    def count_num_of_rows(cls, dataset: str) -> int:
+    def _count_num_of_rows(self) -> int:
         num_of_rows = 0
-        vcf_reader = vcf.Reader(open(dataset, "r"))
+        vcf_reader = vcf.Reader(open(self.dataset, "r"))
         for _ in vcf_reader:
             num_of_rows += 1
         return num_of_rows
 
-    @abstractclassmethod
-    def partition(cls, dataset: set, num_of_rows: int, partion_num: int):
-        # type: ignore
-        vcf_reader = vcf.Reader(open(dataset, "r"))
-        rows_of_each_partition = math.ceil(num_of_rows / partion_num)
+    def partition(self):
+        vcf_reader = vcf.Reader(open(self.dataset, "r"))
+        rows_of_each_partition = math.ceil(self.num_of_rows / self.partition_num)
 
         partition_id = 0
         vcf_writer = vcf.Writer(open(f"{partition_id}.vcf", "w"), vcf_reader)

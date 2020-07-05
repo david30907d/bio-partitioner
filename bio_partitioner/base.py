@@ -1,11 +1,16 @@
-from abc import ABCMeta, abstractclassmethod
+from abc import ABCMeta, abstractmethod
 
 
 class PartitionerBase(metaclass=ABCMeta):
-    @abstractclassmethod
-    def partition(cls, dataset: set, num_of_rows: int, partion_num: int) -> None:
+    def __init__(self, dataset: str, partition_num: int):
+        self.dataset = dataset
+        self.partition_num = partition_num
+        self.num_of_rows = self._count_num_of_rows()
+
+    @abstractmethod
+    def partition(self) -> None:
         pass
 
-    @abstractclassmethod
-    def count_num_of_rows(cls, dataset: str) -> int:
+    @abstractmethod
+    def _count_num_of_rows(self) -> int:
         pass
