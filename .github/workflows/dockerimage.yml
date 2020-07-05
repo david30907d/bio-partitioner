@@ -1,0 +1,21 @@
+test:
+  env:
+    POETRY_VIRTUALENVS_CREATE: false
+
+  runs-on: ubuntu-latest
+
+  steps:
+  - uses: actions/checkout@v2
+  - name: Set up Python 3.7
+    uses: actions/setup-python@v1
+    with:
+      python-version: 3.7
+
+  - name: Install dependencies
+    run: |
+      pip install poetry
+      poetry install --no-dev
+
+  - name: Test with pytest
+    run: |
+      python -m pytest --cov=bio_partitioner --cov-fail-under=40 --cov-report=term-missing tests
