@@ -1,4 +1,4 @@
-from bio_partitioner.partitioner.vcf_partitioner import VCFPartitioner
+from biopartitioner.partitioner.vcf_partitioner import VCFPartitioner
 
 
 class PartitionerFactory(object):

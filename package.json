@@ -4,7 +4,7 @@
   "description": "[![Build Status](https://github.com/david30907d/pyproject_template.svg?token=FjZQpfwxUNPpEosXv6sy&branch=master)](https://github.com/david30907d/pyproject_template)",
   "main": "index.js",
   "scripts": {
-    "test": "python -m pytest --cov=bio_partitioner --cov-fail-under=40 --cov-report=term-missing tests",
+    "test": "python -m pytest --cov=biopartitioner --cov-fail-under=40 --cov-report=term-missing tests",
     "commit": "git-cz",
     "check": "lint-staged"
   },

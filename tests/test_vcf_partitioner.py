@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from bio_partitioner.factory import PartitionerFactory
+from biopartitioner.factory import PartitionerFactory
 
 
 def test_crawl_every_page():

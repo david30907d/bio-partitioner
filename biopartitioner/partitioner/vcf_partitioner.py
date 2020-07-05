@@ -5,7 +5,7 @@ import math
 
 import vcf
 
-from bio_partitioner.base import PartitionerBase
+from biopartitioner.base import PartitionerBase
 
 
 class VCFPartitioner(PartitionerBase):

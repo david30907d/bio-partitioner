@@ -1,7 +1,10 @@
 # Bio Partitioner ![Docker Image CI](https://github.com/david30907d/bio-partitioner/workflows/Docker%20Image%20CI/badge.svg)
 
 ## Install
+### For User
+`pip install biopartitioner`
 
+### For Developer
 1. Python dependencies:
     1. `virtualenv venv; . venv/bin/activate`
     2. `pip install poetry`

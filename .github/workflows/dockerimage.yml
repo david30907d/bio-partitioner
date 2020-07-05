@@ -27,4 +27,4 @@ jobs:
 
     - name: Test with pytest
       run: |
-        python -m pytest --cov=bio_partitioner --cov-fail-under=40 --cov-report=term-missing tests
+        python -m pytest --cov=biopartitioner --cov-fail-under=40 --cov-report=term-missing tests
