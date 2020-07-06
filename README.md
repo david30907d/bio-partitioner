@@ -2,7 +2,16 @@
 
 ## Install
 ### For User
-`pip install biopartitioner`
+1. `pip install biopartitioner`
+2. Demo Code:
+```python
+from biopartitioner.factory import PartitionerFactory
+partitioner_caller = PartitionerFactory.create_partitioner("vcf")
+dataset = "fixtures/scaffold.vcf"
+vcf_partioner = partitioner_caller(dataset=dataset, partition_num=8)
+vcf_partioner.partition()
+```
+3. You'll see vcf partition files at current folder.
 
 ### For Developer
 1. Python dependencies:

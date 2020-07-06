@@ -5,7 +5,7 @@
 # https://github.com/dephell/dephell
 
 try:
-    from setuptools import setup
+    from setuptools import setup, find_packages
 except ImportError:
     from distutils.core import setup
 
@@ -15,15 +15,14 @@ setup(
     long_description=readme,
     long_description_content_type="text/markdown",
     name="biopartitioner",
-    version="0.1.2",
+    version="0.1.6",
     python_requires="==3.*,>=3.7.0",
     author="davidtnfsh",
     author_email="davidtnfsh@gmail.com",
     url="https://github.com/david30907d/bio-partitioner",
     license="Apache License 2.0",
-    packages=["biopartitioner"],
+    packages=find_packages(),
     package_dir={"": "."},
-    package_data={},
     install_requires=["pyvcf==0.*,>=0.6.8", "requests==2.*,>=2.23.0"],
     extras_require={
         "dev": [
