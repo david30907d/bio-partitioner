@@ -26,4 +26,7 @@ class VCFPartitioner(PartitionerBase):
             vcf_writer.write_record(row)
             if idx and idx % rows_of_each_partition == 0:
                 partition_id += 1
-                vcf_writer = vcf.Writer(open(f"{partition_id}.vcf", "w"), vcf_reader)
+                vcf_writer = vcf.Writer(
+                    open(f"{self.working_dir.joinpath(partition_id+'.vcf')}", "w"),
+                    vcf_reader,
+                )

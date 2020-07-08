@@ -15,7 +15,7 @@ setup(
     long_description=readme,
     long_description_content_type="text/markdown",
     name="biopartitioner",
-    version="0.1.6",
+    version="0.1.13",
     python_requires="==3.*,>=3.7.0",
     author="davidtnfsh",
     author_email="davidtnfsh@gmail.com",
