@@ -11,18 +11,27 @@ except ImportError:
 
 readme = open("README.md", "r").read()
 
+from setuptools import setup, find_packages
+
 setup(
+    name="biopartitioner",
+    version="0.1.13",
     long_description=readme,
     long_description_content_type="text/markdown",
-    name="biopartitioner",
-    version="0.1.6",
-    python_requires="==3.*,>=3.7.0",
+    url="https://github.com/david30907d/bio-partitioner",
     author="davidtnfsh",
     author_email="davidtnfsh@gmail.com",
-    url="https://github.com/david30907d/bio-partitioner",
     license="Apache License 2.0",
-    packages=find_packages(),
-    package_dir={"": "."},
+    classifiers=[
+        "Development Status :: 4 - Beta",
+        "Intended Audience :: Developers",
+        "Topic :: Software Development :: Build Tools",
+        "License :: OSI Approved :: Apache Software License",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.4",
+        "Programming Language :: Python :: 3.5",
+        "Programming Language :: Python :: 3.6",
+    ],
     install_requires=["pyvcf==0.*,>=0.6.8", "requests==2.*,>=2.23.0"],
     extras_require={
         "dev": [
@@ -36,4 +45,6 @@ setup(
             "safety==1.*,>=1.8.7",
         ]
     },
+    keywords="bioinformatics partition",
+    packages=find_packages(),
 )
