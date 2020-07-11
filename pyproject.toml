@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "biopartitioner"
-version = "0.1.0"
+version = "0.1.14"
 description = ""
 authors = ["davidtnfsh <davidtnfsh@gmail.com>"]
 
