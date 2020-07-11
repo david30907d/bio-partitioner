@@ -21,11 +21,13 @@ class VCFPartitioner(PartitionerBase):
         rows_of_each_partition = math.ceil(self.num_of_rows / self.partition_num)
 
         partition_id = 0
-        partition_filepath = self.working_dir.joinpath(f"{partition_id}.vcf")
-        vcf_writer = vcf.Writer(open(f"{partition_id}.vcf", "w"), vcf_reader)
+        vcf_writer = self._get_vcf_writer(partition_id, vcf_reader)
         for idx, row in enumerate(vcf_reader):
             vcf_writer.write_record(row)
             if idx and idx % rows_of_each_partition == 0:
                 partition_id += 1
-                partition_filepath = self.working_dir.joinpath(f"{partition_id}.vcf")
-                vcf_writer = vcf.Writer(open(f"{partition_filepath}", "w"), vcf_reader,)
+                vcf_writer = self._get_vcf_writer(partition_id, vcf_reader)
+
+    def _get_vcf_writer(self, partition_id, vcf_reader):
+        partition_filepath = self.working_dir.joinpath(f"{partition_id}.vcf")
+        return vcf.Writer(open(f"{partition_filepath}", "w"), vcf_reader,)
