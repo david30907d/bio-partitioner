@@ -15,7 +15,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="biopartitioner",
-    version="0.1.13",
+    version="0.1.14",
     long_description=readme,
     long_description_content_type="text/markdown",
     url="https://github.com/david30907d/bio-partitioner",
