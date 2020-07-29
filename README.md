@@ -31,3 +31,7 @@ vcf_partioner.partition()
 
 1. test: `npm run test`
 2. Run all linter before commitment would save some effort: `npm run check`
+
+## Publish
+
+<https://medium.com/@joel.barmettler/how-to-upload-your-python-package-to-pypi-65edc5fe9c56>
