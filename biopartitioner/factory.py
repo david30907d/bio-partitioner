@@ -1,10 +1,19 @@
+"""
+Use this factory to create partitioner
+"""
 from biopartitioner.partitioner.vcf_partitioner import VCFPartitioner
 
 
-class PartitionerFactory(object):
+class PartitionerFactory:
+    """
+    facotry object
+    """
+
     @classmethod
     def create_partitioner(cls, type_of_dataset):
+        """
+        main function
+        """
         if type_of_dataset == "vcf":
             return VCFPartitioner
-        else:
-            raise Exception("Invalid partitioner")
+        raise Exception("Invalid partitioner")

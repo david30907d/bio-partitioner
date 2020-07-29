@@ -18,7 +18,7 @@
     "**/*.py": [
       "isort -rc -y -ac -ls",
       "black",
-      "pylint --errors-only",
+      "pylint",
       "mypy --ignore-missing-imports",
       "bandit",
       "git add"
