@@ -4,6 +4,7 @@ from biopartitioner.factory import PartitionerFactory
 
 
 def test_crawl_every_page():
+    print("11")
     partitioner_caller = PartitionerFactory.create_partitioner("vcf")
     dataset = "fixtures/scaffold.vcf"
     vcf_partioner = partitioner_caller(
